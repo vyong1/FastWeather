@@ -24,7 +24,7 @@ namespace FastWeather.Models.ZipCodes
 
         }
 
-        public void Open()
+        public void Init()
         {
             // Create a new database file
             SQLiteConnection.CreateFile(DB_FILENAME);
@@ -35,7 +35,7 @@ namespace FastWeather.Models.ZipCodes
                 connection.Open();
 
                 string createTableQuery = "CREATE TABLE IF NOT EXISTS " +
-                    "Zips (Id INTEGER PRIMARY KEY, Name TEXT, Age INTEGER)";
+                    "ZipCodes (Id INTEGER PRIMARY KEY, Name TEXT, Age INTEGER)";
 
                 using (SQLiteCommand command = new SQLiteCommand(createTableQuery, connection))
                 {
